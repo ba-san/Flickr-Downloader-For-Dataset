@@ -2,7 +2,6 @@
 
 from flickrapi import FlickrAPI
 from urllib.request import urlretrieve
-from pprint import pprint
 import os, time, sys, pathlib
 
 def license_checker(num):
@@ -32,12 +31,12 @@ flickr = FlickrAPI(key, secret, format='parsed-json')
 result = flickr.photos.search(
 #text = imgname, # search keyword
 text = "crowd night", # search keyword
-per_page = 100, # num of downloading img
+per_page = 500, # num of downloading img. max is 500
 media = 'photos',
-min_upload_date = '2019-01-19', # 'YYYY-MM-DD'
-max_upload_date = '2020-02-01',
+min_upload_date = '2011-05-01',
+max_upload_date = '2011-06-30',
 license = '2,4,9,10',  # set licence id.
-sort = 'relevance',
+sort = 'relevance', # 'relevance' is good option
 extras = 'license, url_o'
 )
 
@@ -55,9 +54,11 @@ for i, photo in enumerate(photos['photo']):
 		width_o = photo['width_o']
 		height_o = photo['height_o']
 		info = flickr.photos.getInfo(photo_id=photo["id"])
-		
+
+		#print(photo)
 		#print(info['photo'].keys()) # don't delete
 		#print(info['photo']['tags']['tag'].keys()) # don't delete
+		#exit()
 		
 		print("num:{}".format(i))
 		print("\""+photo["id"]+"\":") # ID
