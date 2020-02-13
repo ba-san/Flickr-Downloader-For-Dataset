@@ -1,8 +1,11 @@
+# http://shu223.hatenablog.com/entry/20111201/1328334689
+# If a json has chinese character or japanse letters, pls check above (written in japanse) 
+
 import os
 import glob
 import json
 
-directory = "test"
+directory = "2013-11-01_2013-12-31"
 json_path = "./" + directory + "/info.json"
 
 json_open = open(json_path, 'r')
