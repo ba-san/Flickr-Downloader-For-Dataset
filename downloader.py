@@ -1,5 +1,3 @@
-## https://itstudio.co/2018/12/28/8664/
-
 from flickrapi import FlickrAPI
 from urllib.request import urlretrieve
 import os, time, sys, pathlib
@@ -17,14 +15,14 @@ def license_checker(num):
 	if(num==9): return "Public Domain Dedication (CC0)"
 	if(num==10): return "Public Domain Mark"
 
-# Your API Info.
-key = "7c3138cf17ef1277b23aef6a62837875"
-secret = "ec5f8543237296db"
+# Your API Info. Get from here. https://www.flickr.com/services/api/
+key = "input_your_key_here"
+secret = "input_your_secret_key_here"
 
-wait_time = 1 # request span
+wait_time = 1 # request span. Recommended not to change it.
 imgname = sys.argv[1]
 savedir = "./" + imgname
-path_w = savedir + '/info.json'
+path_w = savedir + '/info.json' # image information will be written to this json file.
 os.mkdir(savedir)
 
 flickr = FlickrAPI(key, secret, format='parsed-json')
@@ -33,8 +31,8 @@ result = flickr.photos.search(
 text = "crowd night", # search keyword
 per_page = 500, # num of downloading img. max is 500
 media = 'photos',
-min_upload_date = '2011-05-01',
-max_upload_date = '2011-06-30',
+min_upload_date = '2032-03-01',
+max_upload_date = '2032-04-30',
 license = '2,4,9,10',  # set licence id.
 sort = 'relevance', # 'relevance' is good option
 extras = 'license, url_o'
@@ -56,9 +54,8 @@ for i, photo in enumerate(photos['photo']):
 		info = flickr.photos.getInfo(photo_id=photo["id"])
 
 		#print(photo)
-		#print(info['photo'].keys()) # don't delete
-		#print(info['photo']['tags']['tag'].keys()) # don't delete
-		#exit()
+		#print(info['photo'].keys())
+		#print(info['photo']['tags']['tag'].keys())
 		
 		print("num:{}".format(i))
 		print("\""+photo["id"]+"\":") # ID

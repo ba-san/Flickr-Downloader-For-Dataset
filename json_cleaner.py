@@ -1,11 +1,8 @@
-# http://shu223.hatenablog.com/entry/20111201/1328334689
-# If a json has chinese character or japanse letters, pls check above (written in japanse) 
-
 import os
 import glob
 import json
 
-directory = "2013-11-01_2013-12-31"
+directory = "set the directory here"
 json_path = "./" + directory + "/info.json"
 
 json_open = open(json_path, 'r')
@@ -31,4 +28,4 @@ for json_delete_file in json_delete_list:
 with open(json_path, 'w') as f:
     json.dump(json_load, f, ensure_ascii=False)
 
-print("json's num:{}".format(len(json_load)))
+print("json's num:{}".format(len(json_load))) # num of remaining image information in a json file.
