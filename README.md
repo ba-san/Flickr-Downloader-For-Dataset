@@ -3,7 +3,7 @@
 ## What's need to be fixed.
 
 1.If there be " in a image title, json file will be corrupt.  
-You need to fix them to \" manually.  
+You need to fix them to add backslash just before " manually.  
 
 2.If there be some Chinese characters, it is a possible to cause Character encoding error.  
 In this case, you need to set Python's '' 
