@@ -6,7 +6,7 @@
 You need to fix them to add backslash just before " manually.  
 
 2.If there be some Chinese characters, it is a possible to cause Character encoding error.  
-In this case, you need to set Python's '' 
+In this case, you need to set a file in Python's 'site-packages'.  
 
 ## Instruction
 
