@@ -21,6 +21,7 @@ In this case, you need to set a file in Python's 'site-packages'.
 5.When you've removed some images in your folder, you need to run 'json_clearner.py' to amend a json file.  
 
 ## Reference
+https://creativecommons.org/
 
 https://itstudio.co/2018/12/28/8664/
 (written in Japanese)
