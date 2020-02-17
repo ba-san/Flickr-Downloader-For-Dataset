@@ -10,13 +10,15 @@ In this case, you need to set Python's ''
 
 ## Instruction
 
-1.You need to sign up to [flickr](https://www.flickr.com/).  
+1.You need to sign up to [flickr](https://www.flickr.com/) to get API keys.  
 
 2.set up 'downloader.py' for downloading setting.  
 
 3.setting 'multi-download.sh' for the time setting.  
 
 4.run 'multi-download.sh'. You will get images and json files in chronological order.  
+
+5.When you've removed some images in your folder, you need to run 'json_clearner.py' to amend a json file.  
 
 ## Reference
 
