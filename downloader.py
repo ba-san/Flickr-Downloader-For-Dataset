@@ -22,7 +22,7 @@ secret = "input_your_secret_key_here"
 wait_time = 1 # request span. Recommended not to change it.
 imgname = sys.argv[1]
 savedir = "./" + imgname
-path_w = savedir + '/info.json' # image information will be written to this json file.
+path_w = savedir + '/' + os.path.basename(savedir) + '_info.json' # image information will be written to this json file.
 os.mkdir(savedir)
 
 flickr = FlickrAPI(key, secret, format='parsed-json')
